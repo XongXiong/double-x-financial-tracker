@@ -47,7 +47,7 @@ High level list of items completed.
 
 ### Next Steps
 
-Features that you would like to add at some point in the future.
+Features that you would like to a∏dd at some point in the future.
 
 - [ ] Feature c
 
