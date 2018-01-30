@@ -1,18 +1,38 @@
 <div class="container">
-  <h1 class="lead">Login</h1>
-    <h1 class="lead alert alert-danger" role="alert" ng-if="lc.message != ''">{{lc.message}}</h2>
-    <form ng-submit="lc.login()">
-      <div>
-          <label for="username">Username:</label>
-          <input type="text" ng-model="lc.user.username" />
-      </div>
-      <div>
-          <label for="password">Password:</label>
-          <input type="password" ng-model="lc.user.password" />
-      </div>
-      <div>
-          <input class="btn btn-default" type="submit" name="submit" value="Log In" />
-          <a href="#register">Register</a>
-      </div>
-    </form>
+    <div class="col-md-10">
+        <h1>Current Accounts</h1>
+    </div>
+    <div class="col-md-2">
+        <button class="btn btn-primary">Add Account</button>
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Institution</th>
+                <th>Account Number</th>
+                <th>Nick Name</th>
+                <th>Balance</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Arvest Bank</td>
+                <td>xxxx1511</td>
+                <td>Main Checking</td>
+                <td>$0.00</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>xxxx1511</td>
+                <td>Backup Checking</td>
+                <td>$0.00</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>xxxx1511</td>
+                <td>Savings</td>
+                <td>$0.00</td>
+            </tr>
+        </tbody>
+    </table>
 </div>
