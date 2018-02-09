@@ -6,9 +6,24 @@ myApp
         vm.bankService = BankService;
 
         vm.accounts = BankService.accounts;
+        vm.accToAdd = {
+            institution: '',
+            end_numbers: '',
+            name: '',
+            balance: ''
+        };
 
         vm.getAccounts = () => {
             BankService.getAccounts();
+        };
+
+        vm.accAdder = () => {
+            $mdDialog.show({
+                templateUrl: '../views/templates/accAdder.html',
+                controller: 'HomeController as hc',
+                clickOutsideToClose: true,
+                escapeToClose: true
+            })
         };
 
         vm.getAccounts();

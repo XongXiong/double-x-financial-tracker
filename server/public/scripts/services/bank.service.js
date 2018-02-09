@@ -11,5 +11,8 @@ myApp
                 console.log('Could not get accounts');
             });
         }
-        
+
+        self.addAccount = (accToAdd) => {
+            
+        }
     });
