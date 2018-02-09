@@ -4,8 +4,8 @@ myApp
         var vm = this;
         vm.userService = UserService;
 
-vm.openMenu = function ($mdMenu, ev) {
-    originatorEv = ev;
-    $mdMenu.open(ev);
-};
+        vm.openMenu = function ($mdMenu, ev) {
+            originatorEv = ev;
+            $mdMenu.open(ev);
+        };
     });

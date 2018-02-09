@@ -1,37 +1,25 @@
 <div class="container">
-    <div class="col-md-10">
+    <div>
         <h1>Current Accounts</h1>
     </div>
-    <div class="col-md-2">
-        <button class="btn btn-primary">Add Account</button>
+    <div>
+        <md-button class="btn md-raised">Add Account</button>
     </div>
-    <table class="table table-striped">
+    <table>
         <thead>
             <tr>
                 <th>Institution</th>
-                <th>Account Number</th>
-                <th>Nick Name</th>
+                <th>Acc. # Ending In</th>
+                <th>Name</th>
                 <th>Balance</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Arvest Bank</td>
-                <td>xxxx1511</td>
-                <td>Main Checking</td>
-                <td>$0.00</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>xxxx1511</td>
-                <td>Backup Checking</td>
-                <td>$0.00</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>xxxx1511</td>
-                <td>Savings</td>
-                <td>$0.00</td>
+            <tr ng-repeat="account in hc.accounts.data">
+                <td>{{account.institution}}</td>
+                <td>{{account.end_numbers}}</td>
+                <td>{{account.name}}</td>
+                <td>$ {{account.balance}}</td>
             </tr>
         </tbody>
     </table>
