@@ -1,28 +1,20 @@
-<div class="container">
-    <div class="col-md-10">
+<div class="container" ng-cloak>
+    <div>
         <h1>Transactions</h1>
     </div>
-    <div class="col-md-2">
-        <div class="btn-group" dropdown is-open="status.isopen">
-            <button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle ng-disabled="disabled">
-                Button dropdown
-                <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" role="menu">
-                <li>
-                    <a href="#">Action</a>
-                </li>
-                <li>
-                    <a href="#">Another action</a>
-                </li>
-                <li>
-                    <a href="#">Something else here</a>
-                </li>
-                <li class="divider"></li>
-                <li>
-                    <a href="#">Separated link</a>
-                </li>
-            </ul>
+    <div>
+        <h2>Select an account:</h2>
+        <div  layout-align="center center" layout="column">
+            <md-menu>
+                <md-button class="md-raised" ng-click="tc.openMenu($mdMenu, $event)">Click me
+                </md-button>
+                <md-menu-content width="4">
+                    <md-menu-item>
+                        <md-button>Hey
+                        </md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
         </div>
     </div>
     <div>
