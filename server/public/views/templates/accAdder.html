@@ -2,7 +2,23 @@
     <div layout="column" layout-margin="">
         <h1>Add an account</h1>
         <form ng-submit="hc.bankService.addAccount(hc.accToAdd)" layout="column" layout-align="center" layout-margin="">
-
+            <label for="newAccName">
+                Account Name:
+            </label>
+            <input spellcheck="true" type="text" class="addItemInput" maxlength="30" ng-value="hc.bankService.accToAdd.newAccName" ng-model="hc.bankService.accToAdd.newAccName"/>
+            <label for="Number">
+                Account Number:
+            </label>
+            <input spellcheck="true" type="text" class="addItemInput" maxlength="30" ng-value="hc.bankService.accToAdd.newAccNumber" ng-model="hc.bankService.accToAdd.newAccNumber"/>
+            <label for="newAccNickname">
+                Account Nickname:
+            </label>
+            <input spellcheck="true" type="text" class="addItemInput" maxlength="30" ng-value="hc.bankService.accToAdd.newAccNickname" ng-model="hc.bankService.accToAdd.newAccNickname"/>
+            <label for="newAccStartBal">
+                Account Starting Balance:
+            </label>
+            <input spellcheck="true" type="text" class="addItemInput" maxlength="30" ng-value="hc.bankService.accToAdd.newAccStartBal" ng-model="hc.bankService.accToAdd.newAccStartBal"/>
+            <md-button class="md-raised" style="margin-left:0px;font-weight:bold;" type="submit" name="submit">Add Account</md-button>
         </form>
     </div>
 </div>

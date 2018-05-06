@@ -2,7 +2,13 @@ myApp
     .service('BankService', function ($http, $location) {
         console.log('BankService Loaded');
         var self = this;
-        self.accounts = {data: []};
+        self.accounts = { data: [] };
+        self.accToAdd = {
+            newAccName: '',
+            newAccNumber: '',
+            newAccNickname: '',
+            newAccStartBal: ''
+        }
 
         self.getAccounts = () => {
             $http.get('/bank').then((response) => {
@@ -12,7 +18,7 @@ myApp
             });
         }
 
-        self.addAccount = (accToAdd) => {
-            
+        self.addAccount = () => {
+            console.log(self.accToAdd);
         }
     });
