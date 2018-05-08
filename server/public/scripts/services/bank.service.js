@@ -20,5 +20,6 @@ myApp
 
         self.addAccount = () => {
             console.log(self.accToAdd);
+            
         }
     });
