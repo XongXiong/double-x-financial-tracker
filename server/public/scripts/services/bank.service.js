@@ -11,7 +11,6 @@ myApp
                 .get('/bank')
                 .then((response) => {
                     self.accounts.data = response.data;
-                    
                 })
                 .catch((err) => {
                     console.log('Could not get accounts');

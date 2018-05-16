@@ -28,25 +28,27 @@ router.get('/', function (req, res) {
 router.post('/', function (req, res) {
     let newAccount = req.body;
     console.log(newAccount);
-    pool
-        .connect(function (errorConnectingToDb, db, done) {
-            if (errorConnectingToDb) {
-                console.log('Error connection', errorConnectingToDb);
-                res.sendStatus(500);
-            } else {
-                let queryText = 'INSERT INTO accounts ("institution", "account_number", "name", "balance") VALUES ($1, $2, $3, $4);';
-                db.query(queryText,[newAccount.newAccInstitution, newAccount.newAccNumber, newAccount.newAccNickname, newAccount.newAccStartBal ], function (errorMakingQuery, result) {
-                    done();
-                    if (errorMakingQuery) {
-                        console.log('Error making query', errorMakingQuery);
-                        res.sendStatus(500);
-                    } else {
-                        console.log('Account Added');
-                        res.sendStatus(201);
-                    }
-                })
-            }
-        })
+    pool.connect(function (errorConnectingToDb, db, done) {
+        if (errorConnectingToDb) {
+            console.log('Error connection', errorConnectingToDb);
+            res.sendStatus(500);
+        } else {
+            let queryText = 'INSERT INTO accounts ("institution", "account_number", "name", "balance") VALUES' +
+                    ' ($1, $2, $3, $4);';
+            db.query(queryText, [
+                newAccount.newAccInstitution, newAccount.newAccNumber, newAccount.newAccNickname, newAccount.newAccStartBal
+            ], function (errorMakingQuery, result) {
+                done();
+                if (errorMakingQuery) {
+                    console.log('Error making query', errorMakingQuery);
+                    res.sendStatus(500);
+                } else {
+                    console.log('Account Added');
+                    res.sendStatus(201);
+                }
+            })
+        }
+    })
 })
 
 module.exports = router;
