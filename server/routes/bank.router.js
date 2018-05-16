@@ -26,6 +26,8 @@ router.get('/', function (req, res) {
 })
 
 router.post('/', function (req, res) {
+    let newAccount = req.body;
+    console.log(newAccount);
     pool
         .connect(function (errorConnectingToDb, db, done) {
             if (errorConnectingToDb) {
@@ -33,7 +35,7 @@ router.post('/', function (req, res) {
                 res.sendStatus(500);
             } else {
                 let queryText = 'INSERT INTO accounts ("institution", "account_number", "name", "balance") VALUES ($1, $2, $3, $4);';
-                db.query(queryText, function (errorMakingQuery, result) {
+                db.query(queryText,[newAccount.newAccInstitution, newAccount.newAccNumber, newAccount.newAccNickname, newAccount.newAccStartBal ], function (errorMakingQuery, result) {
                     done();
                     if (errorMakingQuery) {
                         console.log('Error making query', errorMakingQuery);
